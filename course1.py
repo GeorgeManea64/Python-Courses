@@ -147,6 +147,7 @@ print(hex(x)) #Using the hex() function to convert an integer to its hexadecimal
 x = 1 + 2j #Using the j suffix to define a complex number. The real part of the complex number is 1, and the imaginary part is 2.
 print(x)
 
+
 #Course 1.10: Arithmetic Operators
 
 x = 10 + 3 #Addition
@@ -166,6 +167,7 @@ print(x)
 
 #Key note: Unlike Javascript or C++, Python does not have increment (++) or decrement (--) operators. We can use the += and -= operators to achieve the same result.
 
+
 #Course 1.11: Working with Numbers
 
 import math #Importing the math module to use mathematical functions.
@@ -176,3 +178,159 @@ print(abs(PI)) #Using the abs() function to get the absolute value of a number. 
 
 print(math.floor(PI)) #Using the floor() function from the math module to round a floating-point number down to the nearest integer. The floor() function returns the largest integer that is less than or equal to the given number.
 
+
+#Course 1.12: Type Conversion
+
+#x = input("x: ")
+#y = x + 1 #This will cause an error because the input() function returns a string, and we cannot add an integer to a string.
+
+"""
+"1" + "1" -> "11" 
+1 + 1 -> 2 
+"""
+#Python doesn't know how to do type conversion, because it doesn't do implicit type conversions. 
+"""
+x = input("x: ")
+
+print(int(x))
+print(float(x))
+print(bool(x))
+#print(str(x))
+"""
+#Falsy values:
+#""
+#0
+#[]
+#None (null)
+
+
+#Course 1.13: Conditional Statements
+
+age = 22
+if age >= 18:
+    print("Adult")
+    print("Adult")
+elif age >= 13:
+    print("Teenager")
+else:
+    print("Child")
+
+print("All done!")    
+#>= is the greater than or equal to operator, which returns True if the left operand is greater than or equal to the right operand, and False otherwise.    
+#== is the equality operator, which returns True if the left operand is equal to the right operand, and False otherwise.
+#!= is the inequality operator, which returns True if the left operand is not equal to the right operand, and False otherwise.
+
+if x > 1:
+    pass #The pass statement is used as a placeholder for code that will be added later. It does nothing and is used to avoid syntax errors when we have an empty block of code.
+else:
+    pass
+
+
+#Course 1.14: Logical Operators
+
+"""
+- and #The and operator returns True if both operands are True, and False otherwise.
+- or #The or operator returns True if at least one of the operands is True, and False otherwise.
+- not #The not operator returns True if the operand is False, and False if the operand is True. It is a unary operator, which means that it only takes one operand.
+"""
+
+name = " "
+
+#if not name: #This will evaluate to True if the name variable is an empty string, which is a falsy value in Python. The not operator negates the value of name, so if name is an empty string, not name will be True, and the code inside the if block will be executed.
+
+if not name.strip():
+    print("Name is empty")
+
+#0
+#""
+#None
+#[]
+#These are all considered falsy in Python.
+
+age = 22
+"""
+if age >= 18 and age < 65:
+    print("Eligible")
+"""
+if 18 <= age < 65:
+    print("Eligible")
+
+# 18 <= age < 65 is a chained comparison, which is a more concise way to write the same condition. It checks if age is greater than or equal to 18 and less than 65 at the same time.
+
+
+#Course 1.15: Ternary Operator
+
+age = 22
+if age >= 18:
+    message = "Eligible"
+else:
+    message = "Not eligible"
+
+#message = age >= 18 ? "Eligible" : "Not eligible" #Using the ternary operator to assign a value to a variable based on a condition. The syntax is: variable = condition ? value_if_true : value_if_false. However, Python does not have a built-in ternary operator, so we can use a conditional expression instead.
+
+message = "Eligible" if age >= 18 else "Not eligible" #Using a conditional expression to achieve the same result as the ternary operator. The syntax is: variable = value_if_true if condition else value_if_false.
+
+print(message)
+
+
+#Course 1.16: For Loops
+
+#for loops are used to iterate over a sequence (such as a list, tuple, string, or range) and execute a block of code for each item in the sequence.
+#while loops are used to execute a block of code repeatedly as long as a certain condition is true.
+
+# for x in "Python":
+#     print(x)
+
+# for x in ['a', 'b', 'c']:
+#     print(x)
+
+# for x in range(0, 10, 2):
+# #The range() function is used to generate a sequence of numbers. The syntax is: range(start, stop, step). The start parameter is the starting number of the sequence (inclusive), the stop parameter is the ending number of the sequence (exclusive), and the step parameter is the increment between each number in the sequence. If the start parameter is not provided, it defaults to 0. If the step parameter is not provided, it defaults to 1.
+#     print(x)
+
+print(range(5))
+
+
+#Course 1.17 For..Else
+
+names = ["George", "Manea"]
+# found = False
+for name in names:
+    if name.startswith("G"): #The startswith() method is used to check if a string starts with a specified prefix. It returns True if the string starts with the prefix, and False otherwise.
+        print("Found")
+        # found = True
+        break #The break statement is used to exit a loop prematurely. When the break statement is executed, the loop is terminated, and the program continues with the next statement after the loop.
+# if not found:
+else: #The else block after a for loop is executed only if the loop completes without encountering a break statement. If the loop is terminated by a break statement, the else block is skipped.
+    print("Not found")
+
+
+#Course 1.18: While Loops
+
+# guess = 0
+# answer = 5
+
+# while answer != guess:
+#     guess = int(input("Guess: "))
+# else:
+#     pass
+# while loops are used to execute a block of code repeatedly as long as a certain condition is true. The else block after a while loop is executed only if the loop completes without encountering a break statement. If the loop is terminated by a break statement, the else block is skipped.
+
+#Course 1.19: Functions
+# numbers = [1, 2, 3]
+# numbers = (1, 2, 3)
+
+# def increment(number, by): #Defining a function named increment that takes two parameters: numbers and by. The numbers parameter is expected to be a list of numbers, and the by parameter is expected to be a number that will be added to each element in the numbers list.
+#     return (number, number + by)
+
+# print(increment(2, 3))
+
+# def increment(number, by=1):
+#     return (number, number + by)
+
+# print(increment(2))
+
+def increment(number: int, by: int = 1) -> tuple:
+    return (number, number + by)
+
+print(increment(2))
