@@ -373,3 +373,45 @@ def save_user(**user):
 save_user(id=1, name="admin")
 #The save_user function takes a variable number of keyword arguments and prints them as a dictionary. When we call save_user(id=1, name="admin"), the id and name keyword arguments are passed to the function, and they are collected into a dictionary named user, which is then printed. The output will be: {'id': 1, 'name': 'admin'}
 
+#Course 1.22: Scope
+
+message = "a" #Global variable
+# Screw the global variable practice.
+
+def greet():
+    global message #Using the global keyword to indicate that we want to use the global variable message instead of creating a new local variable with the same name. This allows us to modify the value of the global variable message from within the greet function.
+    message = "b" #Local variable. This variable is only accessible within the greet function, and it shadows the global variable with the same name.
+    # if True:
+        # message = "a"
+    # print(message)
+
+greet()
+print(message)
+
+#Course 1.23: Debugging
+
+def multiply(*numbers):
+    total = 1
+    for number in numbers:
+        total *= number
+    return total
+
+print("start") 
+print(multiply(1, 2, 3, 4))
+print("finish")
+
+#F9: Activate a breakpoint for a debug
+#F5: Start the debugging session
+#F10: Stepping over the next line of code
+#F11: Checks on what is happening for this line of code
+
+#Course 1.24: VSCode Coding Tricks
+
+def multiple(*numbers):
+    total = 1
+    for number in numbers:
+        total *= number
+    return total
+
+print("start")
+print(multiply(1, 2, 3))
