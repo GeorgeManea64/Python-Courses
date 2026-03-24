@@ -334,3 +334,42 @@ def increment(number: int, by: int = 1) -> tuple:
     return (number, number + by)
 
 print(increment(2))
+
+#Course 1.20: Arguments- xargs
+
+# def multiply(a, b): #defining a function named multiply that takes two parameters: a and b. The function returns the product of a and b.
+#     return a * b
+
+# multiply(2, 3)
+
+# def multiply(list):
+#     return a * b #This will cause an error because the function is expecting two parameters, but we are passing a list as a single parameter. We need to unpack the list into individual arguments.
+
+# multiply([2, 3, 4, 5])
+
+# def multiply(*list):
+# #The * operator is used to unpack a list of arguments into individual arguments. When we use *list in the function definition, it allows us to pass a variable number of arguments to the function, and they will be collected into a tuple named list.
+#     print(list)
+
+# multiply(2, 3, 4, 5)
+
+def multiply(*list):
+    total = 1
+    for number in list:
+        total *= number
+    return total
+
+print(multiply(2, 3, 4, 5))
+
+#Course 1.21: Arguments- xxargs
+
+def save_user(**user):
+#The ** operator is used to unpack a dictionary of keyword arguments into individual keyword arguments. When we use **user in the function definition, it allows us to pass a variable number of keyword arguments to the function, and they will be collected into a dictionary named user.
+    print(user)
+    # print(user["id"])
+    # print(user["name"])
+
+
+save_user(id=1, name="admin")
+#The save_user function takes a variable number of keyword arguments and prints them as a dictionary. When we call save_user(id=1, name="admin"), the id and name keyword arguments are passed to the function, and they are collected into a dictionary named user, which is then printed. The output will be: {'id': 1, 'name': 'admin'}
+
